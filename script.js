@@ -35,27 +35,39 @@ document.addEventListener('DOMContentLoaded', () => {
     let isPlaying = false;
 
     if (bgmToggle && bgmAudio) {
+        // Function to attempt playing BGM
+        const playBgm = () => {
+            bgmAudio.play().then(() => {
+                // Success - listeners will update UI
+                // Remove the interaction listeners since we succeeded
+                document.removeEventListener('click', tryPlayOnInteraction);
+                document.removeEventListener('keydown', tryPlayOnInteraction);
+            }).catch(e => {
+                console.log("Autoplay blocked, waiting for interaction");
+            });
+        };
+
+        // Handler for user interaction fallback
+        const tryPlayOnInteraction = () => {
+            playBgm();
+        };
+
+        // Try to play immediately
+        playBgm();
+
+        // Add fallback listeners
+        document.addEventListener('click', tryPlayOnInteraction, { once: true });
+        document.addEventListener('keydown', tryPlayOnInteraction, { once: true });
+
         bgmToggle.addEventListener('click', () => {
             if (isPlaying) {
                 bgmAudio.pause();
-                bgmToggle.innerHTML = '🔇 BGM OFF';
-                bgmToggle.classList.remove('active');
             } else {
                 bgmAudio.play().catch(e => {
                     console.error("Audio play failed", e);
-                    alert("BGMを再生できませんでした。assetsフォルダにbgm.mp3があるか確認してください。");
+                    alert("BGMを再生できませんでした。");
                 });
-                // Update UI regardless of promise for responsiveness, 
-                // though strictly should wait. For simple UI, this is okay 
-                // provided catch handles errors.
-                if (!bgmAudio.paused || bgmAudio.currentTime > 0) {
-                    // Check if actually playing might be async, so simplistic approach:
-                }
-                // Simpler approach:
-                bgmToggle.innerHTML = '🎵 BGM ON';
-                bgmToggle.classList.add('active');
             }
-            isPlaying = !isPlaying;
         });
 
         // Handle case where play fails or audio ends (though looped)
