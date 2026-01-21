@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper Pro - The Ultimate Logic Challenge</title>
+    <meta name="description"
+        content="Experience Minesweeper like never before. Stunning visuals, smooth controls, and dark mode. Available now.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Animation Library (AOS) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Minesweeper <span class="highlight">Pro</span></div>
+        <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#showcase">Gallery</a></li>
+            <li><a href="#download" class="btn-primary small">Download</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-bg">
+            <img src="assets/hero.png" alt="Minesweeper Grid Background">
+        </div>
+        <div class="hero-content" data-aos="fade-up">
+            <h1>CLASSIC LOGIC.<br><span class="gradient-text">MODERN SOUL.</span></h1>
+            <p>The world's most addictive puzzle game, redesigned for the digital age. Immerse yourself in the grid.</p>
+            <div class="hero-buttons">
+                <a href="#download" class="btn-primary">Get it on App Store</a>
+                <a href="#showcase" class="btn-secondary">View Gameplay</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 data-aos="fade-up">Why Go Pro?</h2>
+            <div class="feature-grid">
+                <div class="feature-card glass" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon">✨</div>
+                    <h3>Stunning Visuals</h3>
+                    <p>Forget the grey boxes. Enjoy a fully immersive, neon-soaked interface with liquid smooth
+                        animations.</p>
+                </div>
+                <div class="feature-card glass" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon">🎮</div>
+                    <h3>Precision Control</h3>
+                    <p>Designed for touch. Tap, hold, and flag with absolute precision. No more accidental detonations.
+                    </p>
+                </div>
+                <div class="feature-card glass" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon">🌙</div>
+                    <h3>True Dark Mode</h3>
+                    <p>Easy on the eyes, perfect for late-night sessions. The OLED-black background makes the colors
+                        pop.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="showcase" class="showcase">
+        <div class="container split-layout">
+            <div class="text-content" data-aos="fade-right">
+                <h2>Designed for <span class="highlight">Perfection</span></h2>
+                <p>Every pixel has been polished. From the satisfying click sounds to the particle effects upon winning,
+                    Minesweeper Pro elevates the humble classic into a sensory experience.</p>
+                <ul class="feature-list">
+                    <li>Daily Challenges</li>
+                    <li>Global Leaderboards</li>
+                    <li>Customizable Themes</li>
+                </ul>
+            </div>
+            <div class="image-content" data-aos="fade-left">
+                <div class="mockup-container">
+                    <img src="assets/mockup.png" alt="App Mockup" class="floating-mockup">
+                    <div class="glow-effect"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="cta-section">
+        <div class="glass card" data-aos="zoom-in">
+            <h2>Ready to Clear the Grid?</h2>
+            <p>Join millions of players in the ultimate test of logic and speed.</p>
+            <button class="btn-primary large">Download Now &rarr;</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Minesweeper Pro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
