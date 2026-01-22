@@ -20,14 +20,23 @@ body {
     color: var(--text-color);
     overflow-x: hidden;
     line-height: 1.6;
+    image-rendering: pixelated;
 }
 
 h1,
 h2,
-h3,
-.logo {
-    font-family: 'Outfit', sans-serif;
+h3 {
+    font-family: 'DotGothic16', sans-serif;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.logo {
+    font-family: 'Press Start 2P', cursive;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    /* Adjusted for wider font */
+    line-height: 1.5;
 }
 
 /* Navbar */
@@ -381,7 +390,21 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
     .hero-text h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        /* Smaller for mobile readability */
+    }
+
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
     }
 
     .split-layout {
@@ -396,8 +419,16 @@ footer {
 
     .feature-list li {
         text-align: left;
-        display: inline-block;
-        margin: 0 1rem;
+        display: block;
+        /* Align vertically for easier reading on mobile */
+        margin: 0.5rem 0;
+    }
+
+    .feature-grid,
+    .tutorial-grid {
+        grid-template-columns: 1fr;
+        /* Force single column on mobile */
+        padding: 0 1rem;
     }
 }
 
