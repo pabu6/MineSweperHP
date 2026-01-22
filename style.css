@@ -430,6 +430,13 @@ footer {
         /* Force single column on mobile */
         padding: 0 1rem;
     }
+
+    .mas-bot-container {
+        width: 60px;
+        /* Much smaller for mobile */
+        bottom: 10px;
+        right: 10px;
+    }
 }
 
 /* Mascot */
